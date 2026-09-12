@@ -47,3 +47,7 @@ a {
     color-scheme: dark;
   }
 }
+
+img {
+  width: 200px;
+}
