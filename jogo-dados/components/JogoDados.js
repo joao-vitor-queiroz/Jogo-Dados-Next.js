@@ -83,22 +83,28 @@ export default function JogoDados() {
     <div className="container">
       <h1>Jogo de dados</h1>
       <h2>Rodada {rodada} / 5</h2>
-      <h2>{mensagem}</h2>
-
-      <div className="jogador">
-        <h3>Jogador 1</h3>
-        <Dado valor={dadosJ1[0]} />
-        <Dado valor={dadosJ1[1]} />
-        <button onClick={jogarJ1} disabled={turno == 2 || jogoFinalizado}>Jogar</button>
-      </div>
-
-      <div className="jogador">
-        <h3>Jogador 2</h3>
-        <Dado valor={dadosJ2[0]} />
-        <Dado valor={dadosJ2[1]} />
-        <button onClick={jogarJ2} disabled={turno == 1 || jogoFinalizado}>Jogar</button>
-      </div>
       <p>Vitorias do Jogador 1: {vitoriasJ1} | Vitorias do Jogador 2: {vitoriasJ2} | Empates: {empates}</p>
+
+      <div className="jogadores">
+        <div className="jogador">
+          <h3>Jogador 1</h3>
+          <div>
+            <Dado valor={dadosJ1[0]} />
+            <Dado valor={dadosJ1[1]} />
+          </div>
+          <button onClick={jogarJ1} disabled={turno == 2 || jogoFinalizado}>Jogar</button>
+        </div>
+
+        <div className="jogador">
+          <h3>Jogador 2</h3>
+          <div>
+            <Dado valor={dadosJ2[0]} />
+            <Dado valor={dadosJ2[1]} />
+          </div>
+          <button onClick={jogarJ2} disabled={turno == 1 || jogoFinalizado}>Jogar</button>
+        </div>
+      </div>
+      <h3>{mensagem}</h3>
 
       {jogoFinalizado && (
         <div className="resultadoFinal">
